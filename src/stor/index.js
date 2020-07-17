@@ -5,8 +5,8 @@ import products from './productsReducer';
 
 let reducer = combineReducers({
  
-  cart:cartReducer,
-  category:categoryReducer,
+  carts:cartReducer,
+  categories:categoryReducer,
   product:products,
 })
 export default createStore(reducer);

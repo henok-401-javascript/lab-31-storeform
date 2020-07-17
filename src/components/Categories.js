@@ -1,11 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { Button } from '@material-ui/core';
 
 function Category(props){
-  console.log('do we have anything',props);
+
+  let selectedCategory = [];
+  
+  for(let i = 0; i < props.category.length;i++){
+selectedCategory.push(<Button key={i} variant="contained" color="secondary" onClick={() =>{
+  props.dispatch({
+    type:'CHANGE-CATEGORY',
+    payload:props.category[i].name,
+  })
+}}>{props.category[i].displayName || props.category[i].name}</Button>)
+  }
   return(
 <div>
-
+{selectedCategory}
 </div>
   )
 
@@ -13,7 +24,7 @@ function Category(props){
 
 const mapToStateProps= (state) =>{
   return{
-    category:state.category,
+    category:state.categories.category,
   }
 }
 

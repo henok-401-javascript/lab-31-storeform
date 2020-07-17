@@ -9,11 +9,12 @@ const reducer = (state = initState,action) =>{
 
   switch(action.type){
     case 'ADD TO CART':
-      newState.cart.push(action.payload);
-      newState.cart = action.payload + 1;
+      newState.cartItems.push(action.payload);
+       newState.cart++;
       break;
       case 'CART LIST':
-        newState.cart.push(action.payload);
+        console.log('newstate',newState.cartItems);
+        newState.cartItems.push(action.payload);
         break;
         case 'REMOVE FROM CART':
           newState.cart--;
