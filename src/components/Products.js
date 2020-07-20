@@ -20,7 +20,7 @@ function Product(props){
         })
         }}
         >
-ADD TO CART
+    ADD TO CART
         </Button>
         </div>
       )

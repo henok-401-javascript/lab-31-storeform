@@ -14,7 +14,7 @@ function Header(props){
       type:'CART LIST',
       payload:props.cartItems.name,
     })
-  }}>CART-{props.cart} LIST CART</Button>
+  }}>CART-{props.cart} </Button>
     </AppBar>
     </div>
   ) 
