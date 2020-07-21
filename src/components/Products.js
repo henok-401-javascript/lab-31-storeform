@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import { Button } from '@material-ui/core';
+import * as actions from '../store/store-action';
+
+
+
 
 function Product(props){
  
+  const {getProducts} = props;
   let listCategory = [];
+
+  useEffect(() =>{
+  
+    getProducts();
+
+  } , [getProducts])
 
   for(let i = 0; i < props.product.length;i++){
     if(props.product[i].category === props.currentCategory){
@@ -41,4 +52,13 @@ const mapToStateProps = (state) =>{
     cart:state.carts.cart,
   }
 }
-export default connect(mapToStateProps) (Product);
+const mapDispatchToProps = (dispatch, getState) => ({
+  getProducts: (data) => dispatch( actions.getProducts(data) ),
+  addToCart: (data) => dispatch( actions.addToCart(data) ),
+  // remove: (id) => dispatch( actions.remove(id) )
+})
+
+
+
+
+export default connect(mapToStateProps , mapDispatchToProps) (Product);
