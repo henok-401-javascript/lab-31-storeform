@@ -1,17 +1,19 @@
+import React  from 'react';
 
-const initState = {
-  category : [{name:'Electronics' , displayName: 'Electronics '},{name:'Food' , displayName: 'Foods'}],
 
-  currentCategory:'Food',
-}
+// const initState = {
+//   category : [{name:'Electronics' , displayName: 'Electronics '},{name:'Food' , displayName: 'Foods'}],
+
+//   currentCategory:'Food',
+// }
+let initState = [];
 
 const reducer = (state = initState , action) =>{
 let newState = {...state}
 
 switch(action.type){
-  case 'ADD  CATEGORY':
-  newState.category.push(action.payload);
-  break;
+  case 'ADD CATEGORY':
+  return [...newState , action.payload];
   case 'CHANGE-CATEGORY':
   newState.currentCategory = action.payload;
   break;
