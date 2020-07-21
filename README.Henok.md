@@ -6,9 +6,7 @@
 ### Links and Resources
 
 
-- [submission PR](https://github.com/henok-401-javascript/lab-31-storeform/pull/1)
-- [netlify](
-lab-31-combined-reducers.netlify.app)
+
 
 
 
