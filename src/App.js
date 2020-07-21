@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import {Provider} from 'react-redux'
-import store from './stor';
+import store from './store';
 import Category from './components/Categories';
 import Product from './components/Products';
 import './style/style.scss';
